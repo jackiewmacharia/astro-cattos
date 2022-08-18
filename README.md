@@ -1,3 +1,4 @@
+### Repro code repo
 
 Minimal repro for Edge Functions manifest route patterns validation error
 
@@ -41,3 +42,14 @@ Error
   ]
 
 ```
+
+
+### Testing fix instructions:
+* Clone my astro fork branch [fix/netlify-edge-functions-route-pattern-serialization](https://github.com/jackiewmacharia/astro/tree/fix/netlify-edge-functions-route-pattern-serialization) and set it up as per README instructions
+* Clone this repo and change these two packages to use the local astro instance in this way:
+
+```json
+    "astro": "/Users/jackie/oss/astro/packages/astro",
+    "@astrojs/netlify": "/Users/jackie/oss/astro/packages/integrations/netlify"
+```
+* In `astro-cattos` run `npm i && netlify build` Netlify CLI needs to be at least version 10.17.8. Build should complete without errors.
