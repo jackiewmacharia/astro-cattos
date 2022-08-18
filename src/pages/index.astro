@@ -1,6 +1,5 @@
 ---
 import Layout from '../components/Layout.astro';
-import Button from '../components/Button';
 ---
 
 <Layout title="Netlify Edge functions with Astro">
@@ -9,7 +8,7 @@ import Button from '../components/Button';
 
 		Welcome, visitor from COUNTRYNAME!
 
-		<div><Button client:load /></div>
+		<div style="padding-top: 24px;"><button onclick="location.href = '/catto'" style="padding: 10px 24px;">Click me for some cattos!</button></div>
 	</main>
 </Layout>
 
