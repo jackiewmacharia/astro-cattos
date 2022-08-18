@@ -1,0 +1,8 @@
+---
+import Layout from "../components/Layout.astro";
+import cattos from "./catto.json"
+---
+
+<Layout title={'cattos'}>
+  {cattos.map(catto => <a href={`/catto/${catto.title}`}><img src={catto.url} alt={catto.desc}/></a>)}
+</Layout>

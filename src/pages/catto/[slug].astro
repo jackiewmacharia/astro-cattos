@@ -1,0 +1,20 @@
+---
+import Layout from "../../components/Layout.astro";
+import cattos from "../catto.json";
+
+export async function getStaticPaths() {
+    return cattos.map((catto) => {
+        return [
+            {
+                params: { slug: catto.title },
+                props: { catto },
+            },
+        ];
+    });
+}
+
+const { slug } = Astro.params;
+const { catto } = Astro.props;
+---
+
+<Layout title={"cattos"} />
